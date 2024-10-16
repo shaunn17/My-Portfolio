@@ -28,6 +28,11 @@ const Projects = () => {
       title: 'HRA Portal Dashboard', 
       description: 'A robust healthcare management system built using PostgreSQL',
       link: 'https://app.powerbi.com/groups/me/reports/d30c74e7-116b-4c20-bdb7-e6fadc4895eb/ReportSection?experience=power-bi' // GitHub link for this project
+    },
+    { 
+      title: 'HRA Portal Dashboard', 
+      description: 'A robust healthcare management system built using PostgreSQL',
+      link: 'https://app.powerbi.com/groups/me/reports/d30c74e7-116b-4c20-bdb7-e6fadc4895eb/ReportSection?experience=power-bi' // GitHub link for this project
     }
   ];
 
