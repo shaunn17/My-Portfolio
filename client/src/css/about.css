@@ -1,0 +1,123 @@
+.about {
+    padding: 100px 20px;
+    /* background: linear-gradient(to bottom right, #f0f4ff, #e8eaf6); */
+    /* background-image: url('../images/about.jpg'); */
+    background-color: #2f2e2e;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .about-image {
+    width: 300px;  /* Set the desired width */
+    height: 300px; /* Set the desired height */
+    /* background-position: center top; Center the background image */
+    background-size: cover; /* Ensures the image covers the entire div */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+    overflow: hidden; /* Ensures no overflow */
+  }
+
+  .about-image img {
+    border-radius: 15px; /* Changed to make the image square with rounded corners */
+    width: 300px; /* Set a fixed size for the square image */
+    height: auto; /* Equal width and height for a square */
+    position: relative;
+    top: -35%;
+
+    object-fit: cover;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+  
+  .about-content {
+    max-width: 600px;
+    margin-left: 40px; /* Added margin to create space between image and text */
+  }
+  
+  .about-content h2 {
+    font-size: 2.5em;
+    color: #817f7f;
+    font-weight: bold;
+  }
+  
+  .about-content p {
+    font-size: 1.2em;
+    color: #f9f9f9;
+    line-height: 1.6; /* Improves readability by increasing line spacing */
+  }
+  
+  /* Responsive design for mobile screens */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-content {
+      margin-left: 0; /* Remove margin for smaller screens */
+      margin-top: 20px;
+    }
+  
+    .about-image img {
+      width: 200px;
+      height: 200px; /* Reduce image size on smaller screens */
+    }
+  }
+    
+  
+  
+  
+  /* .about {
+    padding: 100px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .about-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .about-image img {
+    border-radius: 50%;
+    max-width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.1);
+  }
+  
+  .about-content {
+    max-width: 600px;
+  }
+  
+  .about-content h2 {
+    font-size: 2.5em;
+    color: #333;
+  }
+  
+  .about-content p {
+    font-size: 1.2em;
+    color: #666;
+  }
+
+ */
