@@ -74,38 +74,38 @@ const Navbar = () => {
                 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
-                    Customer Cases
+                    Professional Projects
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
                         <Link to="/projects/firecat" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">FireCat 6th SENSE</div>
-                          <p className="text-sm text-gray-500">Smart textiles for firefighter safety</p>
+                          <div className="font-medium">ServiceNow Analytics</div>
+                          <p className="text-sm text-gray-500">Data analysis and process optimization</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/sport-retail" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Sports Performance</div>
-                          <p className="text-sm text-gray-500">Advanced tracking for athletes</p>
+                          <div className="font-medium">Healthcare Readmissions</div>
+                          <p className="text-sm text-gray-500">Machine learning for predictive analytics</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/workwear" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Workwear Climate Control</div>
-                          <p className="text-sm text-gray-500">Temperature regulation for extreme environments</p>
+                          <div className="font-medium">Fraud Detection</div>
+                          <p className="text-sm text-gray-500">ML models for transaction monitoring</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/hockey" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Ice Hockey Elite Tracker</div>
-                          <p className="text-sm text-gray-500">Performance tracking for ice hockey</p>
+                          <div className="font-medium">ETL Pipeline Optimization</div>
+                          <p className="text-sm text-gray-500">Automated data processing workflows</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/pet-tracker" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Pet Activity Counter</div>
-                          <p className="text-sm text-gray-500">Smart collars for pet activity monitoring</p>
+                          <div className="font-medium">Real-time Dashboard</div>
+                          <p className="text-sm text-gray-500">Power BI for customer insights</p>
                         </Link>
                       </li>
                     </ul>
@@ -120,14 +120,14 @@ const Navbar = () => {
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
                         <Link to="/tech-details" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Technology Details</div>
-                          <p className="text-sm text-gray-500">How our smart textile platform works</p>
+                          <div className="font-medium">Technical Expertise</div>
+                          <p className="text-sm text-gray-500">My data science and analytics capabilities</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/development-process" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Development Process</div>
-                          <p className="text-sm text-gray-500">Our approach to creating custom solutions</p>
+                          <div className="font-medium">Consulting Process</div>
+                          <p className="text-sm text-gray-500">My approach to data-driven transformation</p>
                         </Link>
                       </li>
                       <li>
@@ -188,12 +188,12 @@ const Navbar = () => {
             About Us
           </Link>
           
-          {/* Simplified Customer Cases - no dropdown */}
+          {/* Simplified Professional Projects - no dropdown */}
           <Link to="/projects/firecat" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);
           }}>
-            Customer Cases
+            Professional Projects
           </Link>
           
           {/* Simplified Learn More - no dropdown */}

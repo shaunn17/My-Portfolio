@@ -86,10 +86,10 @@ const WhyWrlds = () => {
         margin: "-100px"
       }} variants={containerVariants}>
           <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-            Why WRLDS?
+            Why Choose Shaun?
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 text-lg max-w-3xl mx-auto">
-            In an industry where complexity leads to failure, we bring simplicity and expertise to ensure your success
+            In an industry where data complexity leads to poor decisions, I bring clarity and expertise to ensure your operational success
           </motion.p>
         </motion.div>
         
@@ -102,9 +102,9 @@ const WhyWrlds = () => {
               <BarChart className="w-8 h-8 text-gray-700" />
             </div>
             <h3 className="text-gray-900 text-2xl lg:text-3xl font-bold mb-3">
-              <AnimatedCounter end={3.8} decimals={1} suffix=" Billion" /> USD
+              <AnimatedCounter end={2.5} decimals={1} suffix="K+" />
             </h3>
-            <p className="text-gray-700">Market estimated to reach this value by 2030, with massive growth potential for smart textile solutions</p>
+            <p className="text-gray-700">Daily ServiceNow tickets analyzed using Python and SQL for root-cause analysis and process improvements</p>
           </motion.div>
           
           <motion.div variants={itemVariants} className="bg-gray-100 p-6 rounded-xl border border-gray-200 text-center hover:bg-gray-200 transition-all">
@@ -112,10 +112,10 @@ const WhyWrlds = () => {
               <AlertTriangle className="w-8 h-8 text-gray-700" />
             </div>
             <h3 className="text-gray-900 text-2xl lg:text-3xl font-bold mb-3">
-              <AnimatedCounter end={60} suffix="%" /> 
+              <AnimatedCounter end={20} suffix="%" /> 
             </h3>
             <p className="text-gray-700">
-              of IoT projects stall at the proof-of-concept stage due to fragmented expertise and poor coordination
+              Improvement in fraud detection accuracy and 12% reduction in false positives through machine learning
             </p>
           </motion.div>
           
@@ -124,10 +124,10 @@ const WhyWrlds = () => {
               <Clock4 className="w-8 h-8 text-gray-700" />
             </div>
             <h3 className="text-gray-900 text-2xl lg:text-3xl font-bold mb-3">
-              <AnimatedCounter end={80} suffix="%" />
+              <AnimatedCounter end={40} suffix="%" />
             </h3>
             <p className="text-gray-700">
-              Increase in time-to-market for IoT products over the past four years, creating costly delays
+              Reduction in data ingestion time and 80% decrease in ad-hoc reporting through automated ETL pipelines
             </p>
           </motion.div>
         </motion.div>
@@ -138,10 +138,10 @@ const WhyWrlds = () => {
         }} variants={containerVariants}>
           <motion.div variants={itemVariants} className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-              What WRLDS Does for You
+              What I Can Do for You
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We transform your ideas into market-ready solutions with tangible benefits for your business
+              I transform your data challenges into actionable insights with measurable impact on your operations
             </p>
           </motion.div>
           
@@ -152,8 +152,8 @@ const WhyWrlds = () => {
                   <BarChart className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">New Revenue Products</h4>
-                  <p className="text-gray-700">Create high-margin, sensor-enabled products for new revenue streams.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Data-Driven Decisions</h4>
+                  <p className="text-gray-700">Transform raw data into actionable insights that drive strategic decisions.</p>
                 </div>
               </div>
             </motion.div>
@@ -164,8 +164,8 @@ const WhyWrlds = () => {
                   <Sparkles className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Innovation That Attracts</h4>
-                  <p className="text-gray-700">Break through to dream clients with tech that makes you stand out.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Process Optimization</h4>
+                  <p className="text-gray-700">Identify inefficiencies and implement data-driven process improvements.</p>
                 </div>
               </div>
             </motion.div>
@@ -176,8 +176,8 @@ const WhyWrlds = () => {
                   <Zap className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Comfort-Zone Development</h4>
-                  <p className="text-gray-700">We develop frontier tech while you stay in your comfort zone.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Predictive Analytics</h4>
+                  <p className="text-gray-700">Leverage machine learning to predict outcomes and prevent issues.</p>
                 </div>
               </div>
             </motion.div>
@@ -188,8 +188,8 @@ const WhyWrlds = () => {
                   <Rocket className="w-6 h-6 text-gray-700" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">Brand-Building Leaps</h4>
-                  <p className="text-gray-700">We enable hardware/software leaps that define your brand's future.</p>
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Operational Excellence</h4>
+                  <p className="text-gray-700">Build scalable data infrastructure and reporting systems for growth.</p>
                 </div>
               </div>
             </motion.div>
@@ -201,7 +201,7 @@ const WhyWrlds = () => {
               onClick={() => window.scrollTo(0, 0)}
               className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all group"
             >
-              Learn more about our structured development process
+              Learn more about my consulting process
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

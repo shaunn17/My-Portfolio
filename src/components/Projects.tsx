@@ -8,50 +8,50 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const projects = [
   {
     id: 1,
-    title: "6th SENSE Safety System",
-    brand: "FireCat Group",
-    description: "AI-driven sensor solution integrated into uniforms for law enforcement, military and firefighters, providing real-time vital monitoring and situational awareness in high-risk environments.",
-    tags: ["Safety", "Military", "AI Sensors", "Real-time Monitoring"],
+    title: "ServiceNow Analytics Platform",
+    brand: "Indiana University",
+    description: "Comprehensive EDA and root-cause analysis on 2,500+ daily ServiceNow tickets using Python and advanced SQL, identifying patterns and recommending process improvements.",
+    tags: ["Data Analysis", "Python", "SQL", "Process Optimization"],
     imageUrl: "/lovable-uploads/93ab0638-8190-4ccf-897f-21fda7f4f5ad.png",
     isFeatured: true,
     link: "/projects/firecat",
     details: `
-      FireCat Group aimed to enhance safety in high-risk environments. WRLDS Technologies provided the 6th SENSE solution with secure real-time data transmission, high-quality sensors resistant to extreme conditions, integrated AI-powered clothing, and a centralized control unit. Features include Man Down Alarm, GPS positioning, vital sign monitoring, and Panic Button. Benefits: life-saving technology, machine learning preventing false alarms, durable hardware with 7-10 year lifespan, washable sensors, and Plug & Play installation with 12-20 hours of operation per charge.
+      Indiana University aimed to improve IT service operations through data-driven insights. I provided comprehensive analytics solutions with Python-based EDA, advanced SQL queries, and Power BI dashboards enabling 30+ stakeholders to make faster, data-driven decisions. Features include automated reporting, KPI monitoring, and process improvement recommendations. Benefits: improved operational efficiency, reduced response times, and data-driven decision making.
     `
   },
   {
     id: 2,
-    title: "Performance Athletic Footwear",
-    brand: "Global Sports Retail Leader",
-    description: "Smart Footwear R&D aiming to revolutionize development, fitting, and testing of athletic footwear.",
-    tags: ["Sports", "R&D", "Footwear", "Athletic Performance"],
+    title: "Healthcare Readmissions Prediction",
+    brand: "Data Science Research",
+    description: "XGBoost model achieving 0.91 AUC and reducing 30-day readmissions by 15% through predictive analytics on public EHR data.",
+    tags: ["Machine Learning", "XGBoost", "Healthcare", "Predictive Analytics"],
     imageUrl: "/lovable-uploads/b0622048-17b4-4c75-a3f0-6c9e17de1d09.png",
     link: "/projects/sport-retail"
   },
   {
     id: 3,
-    title: "Workwear Climate Control",
-    brand: "European Multinational Textile Producer",
-    description: "Fully integrated temperature controls for professionals working in extreme heat and cold. Modular approach to enable full-body systems.",
-    tags: ["Climate Control", "Workwear", "Temperature Regulation", "Extreme Conditions"],
+    title: "Fraud Detection System",
+    brand: "Financial Services",
+    description: "Machine learning models with 20% improved accuracy and 12% reduction in false positives for transaction monitoring and anomaly detection.",
+    tags: ["Machine Learning", "Fraud Detection", "Python", "scikit-learn"],
     imageUrl: "/lovable-uploads/6b0637e9-4a7b-40d0-b219-c8b7f879f93e.png",
     link: "/projects/workwear"
   },
   {
     id: 4,
-    title: "Ice Hockey Elite Skill Tracker",
-    brand: "Mars Blades",
-    description: "R&D product evaluating data from single IMU embedded in the hockey shoe. Aim: establish motion patterns that lead to ultimate acceleration, speed, and maneuverability.",
-    tags: ["Ice Hockey", "Motion Analysis", "Performance Tracking", "Sports"],
+    title: "ETL Pipeline Optimization",
+    brand: "Healthcare Analytics",
+    description: "Automated Airflow-PySpark ETL pipeline reducing data ingestion and preprocessing time by 40% for diagnostic and order data.",
+    tags: ["ETL", "Airflow", "Spark", "Data Engineering"],
     imageUrl: "/lovable-uploads/c30e0487-2fa0-41d1-9a0b-699cb2855388.png",
     link: "/projects/hockey"
   },
   {
     id: 5,
-    title: "Dog Activity Counter",
-    brand: "UK Insurance Giant",
-    description: "R&D project embedding a step counter in a dog collar. Measures daily activity and sends real-time data to the cloud for veterinary consultancies.",
-    tags: ["Pet Technology", "Insurance", "Activity Tracking", "R&D"],
+    title: "Real-time Dashboard Platform",
+    brand: "Customer Engagement",
+    description: "Power BI dashboard tracking 192K+ user events from GCP BigQuery and REST API endpoints, informing 40% expansion in customer engagement initiatives.",
+    tags: ["Power BI", "BigQuery", "Real-time Analytics", "Customer Insights"],
     imageUrl: "/lovable-uploads/d5ce901e-2ce0-4f2a-bce1-f0ca5d6192df.png",
     link: "/projects/pet-tracker"
   }
@@ -130,13 +130,13 @@ const Projects = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className={`text-center mb-10 max-w-3xl mx-auto transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
-            Customer Cases
+            Professional Projects
           </div>
           <h2 className="text-3xl font-bold mb-3">
-            From Textile to Intelligence
+            From Data to Intelligence
           </h2>
           <p className="text-gray-600">
-            Explore how our textile sensor technology is revolutionizing multiple industries with intelligent fabric solutions tailored to specific needs.
+            Explore how my data analysis and machine learning expertise is transforming multiple industries with intelligent solutions tailored to specific business needs.
           </p>
           {isMobile && (
             <div className="flex items-center justify-center mt-4 animate-pulse-slow">

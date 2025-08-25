@@ -134,17 +134,17 @@ const ContactForm = () => {
 
   return <section id="contact" className="bg-gradient-to-b from-white to-black text-white relative py-[25px]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-3 px-3 py-1 bg-white text-black rounded-full text-sm font-medium">
-            Get In Touch
+                  <div className="text-center mb-16">
+            <div className="inline-block mb-3 px-3 py-1 bg-white text-black rounded-full text-sm font-medium">
+              Get In Touch
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+              Contact Me Today
+            </h2>
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+              Have questions about data analysis, business intelligence, or operational optimization? Reach out and let's discuss how I can help transform your business operations.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
-            Contact Us Today
-          </h2>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-            Have questions about our AI-powered sensor solutions? Reach out to our team and let's discuss how we can help bring your ideas to life.
-          </p>
-        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="bg-white rounded-xl shadow-xl p-8 border border-gray-700 text-black">
@@ -223,9 +223,20 @@ const ContactForm = () => {
               <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4">
                 <Mail className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-2">For general inquiries:</p>
-              <a href="mailto:info@wrlds.com" className="text-blue-500 hover:underline">hello@wrlds.com</a>
+              <h3 className="text-xl font-semibold mb-2">Email Me</h3>
+              <p className="text-gray-600 mb-2">For professional inquiries:</p>
+              <a href="mailto:figueiroshaun@gmail.com" className="text-blue-500 hover:underline">figueiroshaun@gmail.com</a>
+              <p className="text-gray-600 mt-2 mb-2">
+            </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-700 text-black">
+              <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white mb-4">
+                <Mail className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Connect on LinkedIn</h3>
+              <p className="text-gray-600 mb-2">For professional networking:</p>
+              <a href="https://www.linkedin.com/in/shaun-figueiro/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">@shaun-figueiro</a>
               <p className="text-gray-600 mt-2 mb-2">
             </p>
             </div>
