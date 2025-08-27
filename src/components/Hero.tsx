@@ -52,13 +52,13 @@ const Hero = () => {
             playsInline 
             preload="metadata"
             className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`}
-            poster="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png"
+            poster="/videos/landing-page-img.jpg"
           >
-            <source src="/lovable-uploads/video_1751292840840_1751292842546.mp4" type="video/mp4" />
+            <source src="/videos/landing-page-video.mp4" type="video/mp4" />
             {/* Fallback image if video fails to load */}
             <img 
-              src="/lovable-uploads/4bfa0d71-3ed2-4693-90b6-35142468907f.png" 
-              alt="WRLDS Technologies Connected People" 
+              src="/videos/landing-page-img.jpg" 
+              alt="Portfolio background" 
               className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`} 
             />
           </video>
@@ -68,9 +68,9 @@ const Hero = () => {
         <div className="banner-overlay bg-transparent pt-20 sm:pt-24 md:pt-32 w-full">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
             <motion.div className="w-full max-w-4xl text-center" variants={itemVariants}>
-              <motion.h1 className="banner-title text-white" variants={itemVariants}>Data-Driven Operations Excellence</motion.h1>
+              <motion.h1 className="banner-title text-white" variants={itemVariants}>Welcome to my portfolio</motion.h1>
               <motion.p className="banner-subtitle text-gray-300 mt-4 sm:mt-6" variants={itemVariants}>
-                Transforming business operations through advanced data analysis, business intelligence, and strategic insights.
+                A curated selection of projects, case studies, and experiments. From data ingestion to insight — ETL, data modeling, and BI that move KPIs.
               </motion.p>
               <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center" variants={itemVariants}>
                 {/* Styled as a button but using an anchor tag for project navigation */}
