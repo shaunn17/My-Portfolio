@@ -2,9 +2,11 @@ import { ArrowRight, Code, Cpu, Layers, MessageSquare } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const isMobile = useIsMobile();
+  const [shouldUsePoster, setShouldUsePoster] = useState(false);
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -18,6 +20,35 @@ const Hero = () => {
       }
     }
   };
+  
+  const getShouldUsePoster = (): boolean => {
+    if (typeof window === 'undefined') return false;
+    const mql = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    const prefersReduced = !!(mql && mql.matches);
+    const nav: any = navigator as any;
+    const connection = nav && (nav.connection || nav.mozConnection || nav.webkitConnection);
+    const saveData = !!(connection && connection.saveData);
+    const effectiveType = connection && connection.effectiveType;
+    const isSlow = effectiveType === 'slow-2g' || effectiveType === '2g';
+    return prefersReduced || saveData || isSlow;
+  };
+
+  useEffect(() => {
+    setShouldUsePoster(getShouldUsePoster());
+
+    let mql: any = null;
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const onChange = () => setShouldUsePoster(getShouldUsePoster());
+      if (mql.addEventListener) mql.addEventListener('change', onChange);
+      else if (mql.addListener) mql.addListener(onChange);
+      return () => {
+        if (!mql) return;
+        if (mql.removeEventListener) mql.removeEventListener('change', onChange);
+        else if (mql.removeListener) mql.removeListener(onChange);
+      };
+    }
+  }, []);
   const itemVariants = {
     hidden: {
       y: 20,
@@ -45,23 +76,34 @@ const Hero = () => {
   return <motion.div className="relative w-full" initial="hidden" animate="visible" variants={containerVariants}>
       <div className="banner-container bg-black relative overflow-hidden h-[50vh] sm:h-[60vh] md:h-[500px] lg:h-[550px] xl:h-[600px] w-full">
         <div className="absolute inset-0 bg-black w-full">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            preload="metadata"
-            className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`}
-            poster="/videos/landing-page-img.jpg"
-          >
-            <source src="/videos/landing-page-video.mp4" type="video/mp4" />
-            {/* Fallback image if video fails to load */}
+          {shouldUsePoster ? (
             <img 
               src="/videos/landing-page-img.jpg" 
               alt="Portfolio background" 
               className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`} 
             />
-          </video>
+          ) : (
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              preload="metadata"
+              aria-hidden="true"
+              className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`}
+              poster="/videos/landing-page-img.jpg"
+            >
+              {/* Optional WebM for better compression (add the file to public/videos) */}
+              <source src="/videos/landing-page-video.webm" type="video/webm" />
+              <source src="/videos/landing-page-video.mp4" type="video/mp4" />
+              {/* Fallback image if video fails to load */}
+              <img 
+                src="/videos/landing-page-img.jpg" 
+                alt="Portfolio background" 
+                className={`w-full h-full object-cover opacity-70 grayscale ${isMobile ? 'object-right' : 'object-center'}`} 
+              />
+            </video>
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-white"></div>
         </div>
         
