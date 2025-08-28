@@ -3,7 +3,7 @@ import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Education from '@/components/Education';
-import Skills from '@/components/Skills';
+import MainSkills from '@/components/MainSkills';
 import BlogPreview from '@/components/BlogPreview';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';
@@ -27,7 +27,7 @@ const Index = () => {
         keywords={['data analysis', 'business intelligence', 'operations consulting', 'python', 'sql', 'power bi', 'tableau', 'data science', 'machine learning']}
       />
       <Hero />
-      <Skills />
+      <MainSkills />
       <Education />
       <Projects />
       <BlogPreview />
