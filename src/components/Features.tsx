@@ -339,7 +339,7 @@ const Features = () => {
               <div className="bg-gray-50 rounded-lg p-6 text-center border border-gray-100">
                 <div className="text-3xl font-extrabold text-gray-900">+18%</div>
                 <div className="text-sm text-gray-600 mt-1">forecast accuracy</div>
-              </div>
+                </div>
               <div className="bg-gray-50 rounded-lg p-6 text-center border border-gray-100">
                 <div className="text-3xl font-extrabold text-gray-900">-30%</div>
                 <div className="text-sm text-gray-600 mt-1">ticket backlog</div>
@@ -349,7 +349,7 @@ const Features = () => {
                 <div className="text-sm text-gray-600 mt-1">pipeline success</div>
               </div>
             </div>
-
+            
             {/* Toolbox badges */}
             <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-6 shadow-md">
               <h3 className="text-lg font-bold mb-3">Toolbox</h3>
