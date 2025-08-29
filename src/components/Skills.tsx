@@ -9,9 +9,10 @@ const profileIds = ["data", "software", "product"] as const;
 const Skills = () => {
   const [profileId, setProfileId] = useState<typeof profileIds[number]>(() => {
     if (typeof window === 'undefined') return 'data';
-    return (localStorage.getItem('skills.profileId') as typeof profileIds[number]) || 'data';
+    const saved = localStorage.getItem('skills.profileId');
+    return (saved && (profileIds as readonly string[]).includes(saved)) ? (saved as typeof profileIds[number]) : 'data';
   });
-  const profile: ProfileConfig = skillsProfiles[profileId];
+  const profile: ProfileConfig = skillsProfiles[profileId] || skillsProfiles['data'];
 
   const [selection, setSelection] = useState<Record<string, string>>(() => {
     if (typeof window === 'undefined') return profile.defaultSelection;
@@ -31,11 +32,12 @@ const Skills = () => {
   }, [profileId, selection]);
 
   const selectedToolDetails = useMemo(() => {
-    return profile.pipelineStages.map((stage) => {
+    const stages = profile?.pipelineStages || [];
+    return stages.map((stage) => {
       const tool = stage.tools.find((t) => t.id === selection[stage.id]);
       return { stage: stage.label, tool: tool?.name, why: tool?.why };
     });
-  }, [selection]);
+  }, [selection, profileId]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,7 +51,7 @@ const Skills = () => {
   return (
     <section id="skills" className="bg-white py-14 md:py-20">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={containerVariants}>
+        <motion.div key={profileId} initial="hidden" whileInView="visible" viewport={{ once: false, margin: "-100px" }} variants={containerVariants}>
           <motion.div variants={itemVariants} className="text-center mb-8 md:mb-12">
             <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Skills & Stack</div>
             <h3 className="text-xl md:text-2xl font-semibold mt-1">How I build data systems</h3>
@@ -74,7 +76,7 @@ const Skills = () => {
             {/* Pipeline Builder */}
             <motion.div variants={itemVariants} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
               <div className="grid gap-5">
-                {profile.pipelineStages.map((stage) => (
+                {(profile.pipelineStages || []).map((stage) => (
                   <div key={stage.id} className="bg-gray-50 rounded-lg border border-gray-200 p-4">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-2 font-semibold text-gray-900">
@@ -117,7 +119,7 @@ const Skills = () => {
                 <Award className="h-4 w-4 text-gray-600" /> Capability pillars
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-                {profile.focusAreas.map((fa) => (
+                {(profile.focusAreas || []).map((fa) => (
                   <div key={fa.title} className="p-3 rounded border border-gray-200">
                     <div className="font-medium text-gray-900">{fa.title}</div>
                     <div className="text-gray-600">{fa.blurb}</div>
@@ -129,7 +131,7 @@ const Skills = () => {
                 <TrendingUp className="h-4 w-4 text-gray-600" /> Capability stories
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {profile.stories.map((s, idx) => (
+                {(profile.stories || []).map((s, idx) => (
                   <div key={idx} className="p-4 rounded border border-gray-200 bg-white flex flex-col justify-between">
                     <div>
                       <div className="text-sm text-gray-500">Problem</div>

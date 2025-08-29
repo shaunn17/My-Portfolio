@@ -8,14 +8,15 @@ const profileIds = ["data", "software", "product"] as const;
 const MainSkills = () => {
   const [profileId, setProfileId] = useState<typeof profileIds[number]>(() => {
     if (typeof window === 'undefined') return 'data';
-    return (localStorage.getItem('mainskills.profileId') as typeof profileIds[number]) || 'data';
+    const saved = localStorage.getItem('mainskills.profileId');
+    return (saved && (profileIds as readonly string[]).includes(saved)) ? (saved as typeof profileIds[number]) : 'data';
   });
 
   useEffect(() => {
     localStorage.setItem('mainskills.profileId', profileId);
   }, [profileId]);
 
-  const profile = skillsProfiles[profileId];
+  const profile = skillsProfiles[profileId] || skillsProfiles['data'];
 
   const container = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.08 } } };
   const item = { hidden: { y: 8, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.35 } } };
@@ -23,7 +24,7 @@ const MainSkills = () => {
   return (
     <section id="main-skills" className="bg-white py-14 md:py-20" aria-labelledby="main-skills-heading">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={container}>
+        <motion.div key={profileId} initial="hidden" whileInView="visible" viewport={{ once: false, margin: "-100px" }} variants={container}>
           <motion.div variants={item} className="text-center mb-8 md:mb-12">
             <div className="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">Skills</div>
             <h2 id="main-skills-heading" className="text-3xl md:text-4xl font-bold">At-a-glance</h2>
@@ -43,17 +44,33 @@ const MainSkills = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={container} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {profile.focusAreas.map((fa) => (
-              <motion.div key={fa.title} variants={item} className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
-                <div className="flex items-baseline justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">{fa.title}</h3>
-                </div>
-                <p className="text-gray-600 text-sm mt-1">{fa.blurb}</p>
-
-                {/* Removed key-tools expander for a simpler view */}
+          <motion.div variants={container} className="bg-white border border-gray-200 rounded-xl divide-y">
+            {(profile.focusAreas || []).length > 0 ? (
+              (profile.focusAreas || []).map((fa) => {
+                const skills = fa.blurb.split(',').map(s => s.trim()).filter(Boolean);
+                return (
+                  <motion.div key={fa.title} variants={item} className="p-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                    <div className="sm:w-1/3">
+                      <h3 className="text-lg font-semibold text-gray-900">{fa.title}</h3>
+                      <p className="text-gray-600 text-sm mt-1">{fa.blurb}</p>
+                    </div>
+                    <div className="sm:w-2/3">
+                      <div className="flex flex-wrap gap-2">
+                        {skills.map((skill, idx) => (
+                          <span key={idx} className="px-3 py-1 text-xs rounded-full border border-gray-200 text-gray-700 bg-gray-50">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })
+            ) : (
+              <motion.div variants={item} className="p-8 text-center text-gray-500">
+                No skills to display for this profile yet.
               </motion.div>
-            ))}
+            )}
           </motion.div>
 
           <motion.div variants={item} className="text-center mt-8">
