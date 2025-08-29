@@ -13,7 +13,7 @@ const ContactInfo = () => {
             Let's Connect
           </h2>
           <p className="text-gray-600 text-lg max-w-xl mx-auto">
-            Always open to discussing new opportunities, collaborations, or just chatting about data science.
+            Always open to discussing new opportunities, collaborations, or just chatting about data, AI, and their impact.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ const ContactInfo = () => {
                 style={{ objectPosition: 'center 9%' }}
               />
               <h3 className="text-xl font-bold text-gray-900 mb-1">Shaun Figueiro</h3>
-              <p className="text-gray-600 mb-1">Data Science | Software Engineering | Business Intelligence</p>
+              <p className="text-gray-600 mb-1 whitespace-nowrap">Data Science | Software Engineering | Business Intelligence</p>
               <div className="flex items-center text-gray-500 text-sm mb-6">
                 <MapPin className="w-4 h-4 mr-1" />
                 Based in Bloomington, IN
