@@ -64,13 +64,10 @@ const Footer = () => {
         </div>
         
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 sm:mb-0 flex items-center">
+        <div className="pt-8 border-t border-gray-800 flex justify-center items-center">
+          <p className="text-gray-400 text-sm flex items-center">
             © {new Date().getFullYear()} Shaun Figueiro • Built with <Heart className="w-4 h-4 mx-1 text-red-400" /> and React
           </p>
-          <div className="flex space-x-6">
-            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy</Link>
-          </div>
         </div>
       </div>
     </footer>

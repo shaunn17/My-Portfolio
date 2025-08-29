@@ -47,19 +47,19 @@ const BlogPreview = () => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Newspaper size={20} className="text-black" />
-              <span className="text-black font-medium">My Writing</span>
+              <span className="text-black font-medium">My Blogs</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Latest Articles</h2>
             <p className="text-gray-800 max-w-xl">
               Thoughts on data science, technology, and the journey of building meaningful solutions.
             </p>
           </div>
-          <Link to="/blog" className="mt-4 md:mt-0">
+          <a href="https://medium.com/@figueiroshaun" target="_blank" rel="noopener noreferrer" className="mt-4 md:mt-0">
             <Button variant="outline" className="group border-black text-black hover:bg-black hover:text-white">
               View All Posts
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-          </Link>
+          </a>
         </div>
         
         <div className="relative">
