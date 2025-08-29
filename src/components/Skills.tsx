@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { BadgeCheck, GitBranch, Award, TrendingUp, ArrowRight } from "lucide-react";
 import { skillsProfiles, type ProfileConfig } from "@/data/skills";
@@ -48,6 +48,43 @@ const Skills = () => {
     visible: { y: 0, opacity: 1, transition: { duration: 0.4 } },
   };
 
+  // Page-like transition variants for profile switching
+  const pageVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      y: -20,
+      transition: { 
+        duration: 0.3,
+        ease: "easeIn"
+      }
+    }
+  };
+
+  const profileItemVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" }
+    },
+    exit: { 
+      opacity: 0, 
+      y: -10,
+      transition: { duration: 0.2, ease: "easeIn" }
+    }
+  };
+
   return (
     <section id="skills" className="bg-white py-14 md:py-20">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -68,13 +105,32 @@ const Skills = () => {
                 </button>
               ))}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4">{profile.title}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mt-1">{profile.subtitle}</p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`profile-header-${profileId}`}
+                variants={profileItemVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="mt-4"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold">{profile.title}</h2>
+                <p className="text-gray-600 max-w-2xl mx-auto mt-1">{profile.subtitle}</p>
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Pipeline Builder */}
-            <motion.div variants={itemVariants} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`profile-content-${profileId}`}
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            >
+              {/* Pipeline Builder */}
+              <motion.div variants={profileItemVariants} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
               <div className="grid gap-5">
                 {(profile.pipelineStages || []).map((stage) => (
                   <div key={stage.id} className="bg-gray-50 rounded-lg border border-gray-200 p-4">
@@ -113,8 +169,8 @@ const Skills = () => {
               </div>
             </motion.div>
 
-            {/* Capability Pillars + Stories Carousel */}
-            <motion.div variants={itemVariants} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+              {/* Capability Pillars + Stories Carousel */}
+              <motion.div variants={profileItemVariants} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
               <div className="mb-3 font-semibold text-gray-900 flex items-center gap-2">
                 <Award className="h-4 w-4 text-gray-600" /> Capability pillars
               </div>
@@ -149,8 +205,9 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
+              </motion.div>
             </motion.div>
-          </div>
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>

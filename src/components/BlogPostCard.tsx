@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 interface BlogPostCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface BlogPostCardProps {
   date: string;
   slug: string;
   category: string;
+  isExternal?: boolean;
 }
 
 const BlogPostCard = ({
@@ -19,17 +21,51 @@ const BlogPostCard = ({
   imageUrl,
   date,
   slug,
-  category
+  category,
+  isExternal = false
 }: BlogPostCardProps) => {
+  const [imgError, setImgError] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  
+  const fallbackImage = "https://images.unsplash.com/photo-1509098681029-6832da980900?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80";
+  const displayImage = imgError ? fallbackImage : imageUrl;
+
+  const CardWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (isExternal) {
+      return (
+        <a href={slug} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link to={`/blog/${slug}`}>
+        {children}
+      </Link>
+    );
+  };
+
   return (
-    <Link to={`/blog/${slug}`}>
+    <CardWrapper>
       <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full">
         <div className="grid grid-rows-[200px,1fr]">
-          <div
-            className="bg-cover bg-center"
-            style={{ backgroundImage: `url('${imageUrl}')` }}
-          >
-            <div className="w-full h-full bg-black/20 flex items-center justify-center">
+          <div className="relative overflow-hidden bg-gray-200">
+            <img
+              src={displayImage}
+              alt={title}
+              className={`w-full h-full object-cover transition-opacity duration-300 ${
+                imgLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setImgLoaded(true)}
+              onError={() => {
+                setImgError(true);
+                setImgLoaded(true);
+              }}
+            />
+            {!imgLoaded && (
+              <div className="absolute inset-0 bg-gray-300 animate-pulse" />
+            )}
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white inline-block">
                 {category}
               </span>
@@ -46,7 +82,7 @@ const BlogPostCard = ({
           </CardContent>
         </div>
       </Card>
-    </Link>
+    </CardWrapper>
   );
 };
 
