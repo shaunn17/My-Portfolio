@@ -30,7 +30,7 @@ const ContactInfo = () => {
               <p className="text-gray-600 mb-1 whitespace-nowrap">Data Science | Software Engineering | Business Intelligence</p>
               <div className="flex items-center text-gray-500 text-sm mb-6">
                 <MapPin className="w-4 h-4 mr-1" />
-                Based in Bloomington, IN
+                United States of America
               </div>
               
               <div className="flex flex-col space-y-3 w-full">
@@ -54,7 +54,7 @@ const ContactInfo = () => {
                   </a>
                   
                   <a 
-                    href="https://github.com/figueiroshaun" 
+                    href="https://github.com/shaunn17" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
