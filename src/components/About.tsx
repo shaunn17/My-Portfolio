@@ -45,12 +45,13 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* Main Content */}
+          {/* Main Content - Side by Side */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Photo Section */}
-            <motion.div variants={itemVariants} className="order-2 lg:order-1 flex justify-center">
-              <div className="relative">
-                <div className="w-80 h-96 rounded-2xl overflow-hidden shadow-xl">
+            {/* Enhanced Visual Left Side */}
+            <motion.div variants={itemVariants} className="order-2 lg:order-1 space-y-6">
+              {/* Profile Photo - Taller and Wider */}
+              <div className="flex justify-center">
+                <div className="w-96 h-[28rem] rounded-2xl overflow-hidden shadow-xl">
                   <img 
                     src="/shaun-headshot.png"
                     alt="Shaun Figueiro"
@@ -58,9 +59,22 @@ const About = () => {
                   />
                 </div>
               </div>
+
+              {/* Tools & Technologies */}
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h4 className="font-semibold text-gray-900 mb-3 text-center">Core Technologies</h4>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">SQL</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Power BI</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Spark</span>
+                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Databricks</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Tableau</span>
+                </div>
+              </div>
             </motion.div>
 
-            {/* Story Section */}
+            {/* Story Section - Right Side */}
             <motion.div variants={itemVariants} className="order-1 lg:order-2 space-y-6">
               <div className="space-y-4">
                 <p className="text-gray-700 text-lg leading-relaxed">
@@ -82,27 +96,35 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Experience Highlights */}
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+              {/* Recent Experience */}
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <Briefcase className="w-4 h-4 text-blue-600" />
-                  Recent Achievements
+                  Recent Experience
                 </h4>
-                <ul className="space-y-2 text-gray-700 text-sm">
-                  <li>• Reduced Power BI query runtime by 60% through SQL optimization</li>
-                  <li>• Built distributed ETL workflows processing 120+ GB clinical data</li>
-                  <li>• Improved model training speed by 40% using Spark and Databricks</li>
-                  <li>• Mentored students as Graduate Teaching Assistant for SQL & RDBMS</li>
-                </ul>
+                <div className="space-y-3">
+                  <div className="border-l-3 border-blue-600 pl-4">
+                    <h5 className="font-semibold text-gray-900">Data & Operations Consultant</h5>
+                    <p className="text-gray-600 text-sm">UITS, Indiana University • Aug 2024 - Present</p>
+                  </div>
+                  <div className="border-l-3 border-green-600 pl-4">
+                    <h5 className="font-semibold text-gray-900">Graduate Teaching Assistant</h5>
+                    <p className="text-gray-600 text-sm">Indiana University • Jun 2024 - May 2025</p>
+                  </div>
+                  <div className="border-l-3 border-purple-600 pl-4">
+                    <h5 className="font-semibold text-gray-900">Data Analyst Research Intern</h5>
+                    <p className="text-gray-600 text-sm">Indiana University • May 2024 - Aug 2024</p>
+                  </div>
+                </div>
               </div>
 
               {/* Key Points */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
                   <GraduationCap className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-gray-900">Continuous Learning</h4>
-                    <p className="text-gray-600 text-sm">Always exploring new tools and techniques</p>
+                    <p className="text-gray-600 text-sm">Always exploring new tools</p>
                   </div>
                 </div>
                 
@@ -110,7 +132,7 @@ const About = () => {
                   <Target className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-gray-900">Results-Driven</h4>
-                    <p className="text-gray-600 text-sm">Focus on measurable business impact</p>
+                    <p className="text-gray-600 text-sm">Focus on business impact</p>
                   </div>
                 </div>
                 
@@ -118,7 +140,7 @@ const About = () => {
                   <Heart className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-gray-900">Collaborative</h4>
-                    <p className="text-gray-600 text-sm">Working with cross-functional teams</p>
+                    <p className="text-gray-600 text-sm">Cross-functional teams</p>
                   </div>
                 </div>
                 
@@ -126,16 +148,16 @@ const About = () => {
                   <div className="w-5 h-5 bg-purple-600 rounded-full mt-0.5 flex-shrink-0"></div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Problem Solver</h4>
-                    <p className="text-gray-600 text-sm">Finding innovative data solutions</p>
+                    <p className="text-gray-600 text-sm">Innovative solutions</p>
                   </div>
                 </div>
               </div>
 
-              {/* Call to action */}
-              <div className="mt-8">
-                <p className="text-gray-600 italic">
+              {/* Quote */}
+              <div className="bg-gray-50 rounded-lg p-6">
+                <blockquote className="text-gray-700 italic text-center">
                   "The best insights come from understanding both the data and the business challenge it's meant to solve."
-                </p>
+                </blockquote>
               </div>
             </motion.div>
           </div>
