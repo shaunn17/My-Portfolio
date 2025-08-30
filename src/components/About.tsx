@@ -45,119 +45,130 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* Main Content - Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Enhanced Visual Left Side */}
-            <motion.div variants={itemVariants} className="order-2 lg:order-1 space-y-6">
-              {/* Profile Photo - Taller and Wider */}
-              <div className="flex justify-center">
-                <div className="w-96 h-[28rem] rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src="/shaun-headshot.png"
-                    alt="Shaun Figueiro"
-                    className="w-full h-full object-cover object-center"
-                  />
+          {/* Story-First Content */}
+          <div className="max-w-4xl mx-auto">
+            {/* Opening Story */}
+            <motion.div variants={itemVariants} className="mb-12">
+              <div className="flex flex-col lg:flex-row items-start gap-8">
+                <div className="lg:w-2/3">
+                  <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    Picture this: You're staring at 2,500 support tickets that flooded in yesterday. Most people see chaos. 
+                    I see patterns waiting to be discovered.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    That's my world at <strong>UITS, Indiana University</strong> – where I turn operational headaches into 
+                    data-driven solutions. But this story actually starts 8,000 miles away in Mumbai, where a curious 
+                    Computer Engineering student first fell in love with the idea that code could solve real problems.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    The path from there to here wasn't linear. It was filled with late nights debugging ETL pipelines, 
+                    "aha!" moments while building dashboards, and the satisfaction of watching a 25% improvement in 
+                    issue resolution time because of something I built.
+                  </p>
                 </div>
-              </div>
-
-              {/* Tools & Technologies */}
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h4 className="font-semibold text-gray-900 mb-3 text-center">Core Technologies</h4>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">SQL</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Power BI</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Spark</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Databricks</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Tableau</span>
+                <div className="lg:w-1/3 flex justify-center">
+                  <div className="w-64 h-80 rounded-xl overflow-hidden shadow-lg">
+                    <img 
+                      src="/shaun-headshot.png"
+                      alt="Shaun Figueiro"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Story Section - Right Side */}
-            <motion.div variants={itemVariants} className="order-1 lg:order-2 space-y-6">
-              <div className="space-y-4">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Hey! I'm Shaun, a Data and Operations Consultant at <strong>UITS, Indiana University</strong>, where I recently 
-                  completed my Master's in Data Science. My journey started with Computer Engineering in Mumbai, 
-                  where I first discovered the power of code to solve real-world problems.
-                </p>
-                
-                <p className="text-gray-700 leading-relaxed">
-                  Today, I analyze <strong>2,500+ daily ServiceNow tickets</strong> using Python and SQL to identify patterns and 
-                  optimize processes. I build Power BI dashboards that have reduced issue resolution time by 25% and 
-                  empower 30+ stakeholders to make faster, data-driven decisions.
-                </p>
-                
-                <p className="text-gray-700 leading-relaxed">
-                  What excites me most is the intersection of <strong>technical rigor and business impact</strong>. Whether it's 
-                  building ETL pipelines, creating predictive models, or designing interactive dashboards, I love transforming 
-                  raw data into insights that actually move the needle.
-                </p>
-              </div>
+            {/* What Drives Me & Current Work Combined */}
+            <motion.div variants={itemVariants} className="mb-8">
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">What gets me excited about data</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <p className="text-gray-700 leading-relaxed mb-3">
+                      It's not the algorithms or the fancy tools (though I do love a good Spark job). It's those moments 
+                      when data tells a story that changes how someone thinks about their business.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Like when my dashboard revealed that 60% of recurring issues stemmed from three specific system 
+                      configurations. Suddenly, the IT team wasn't just fixing problems – they were preventing them.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-700 leading-relaxed mb-3">
+                      I'm that person who gets genuinely excited about a well-optimized SQL query or a clean ETL pipeline. 
+                      But what really drives me is knowing that somewhere, someone is making a better decision because 
+                      of the insights I've uncovered.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Whether it's processing 120+ GB of clinical data or teaching SQL to graduate students, I'm always 
+                      asking: "How can we make this better?"
+                    </p>
+                  </div>
+                </div>
 
-              {/* Recent Experience */}
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 text-blue-600" />
-                  Recent Experience
-                </h4>
-                <div className="space-y-3">
-                  <div className="border-l-3 border-blue-600 pl-4">
-                    <h5 className="font-semibold text-gray-900">Data & Operations Consultant</h5>
-                    <p className="text-gray-600 text-sm">UITS, Indiana University • Aug 2024 - Present</p>
-                  </div>
-                  <div className="border-l-3 border-green-600 pl-4">
-                    <h5 className="font-semibold text-gray-900">Graduate Teaching Assistant</h5>
-                    <p className="text-gray-600 text-sm">Indiana University • Jun 2024 - May 2025</p>
-                  </div>
-                  <div className="border-l-3 border-purple-600 pl-4">
-                    <h5 className="font-semibold text-gray-900">Data Analyst Research Intern</h5>
-                    <p className="text-gray-600 text-sm">Indiana University • May 2024 - Aug 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Key Points */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
-                  <GraduationCap className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Continuous Learning</h4>
-                    <p className="text-gray-600 text-sm">Always exploring new tools</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
-                  <Target className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Results-Driven</h4>
-                    <p className="text-gray-600 text-sm">Focus on business impact</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
-                  <Heart className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Collaborative</h4>
-                    <p className="text-gray-600 text-sm">Cross-functional teams</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm">
-                  <div className="w-5 h-5 bg-purple-600 rounded-full mt-0.5 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Problem Solver</h4>
-                    <p className="text-gray-600 text-sm">Innovative solutions</p>
+                {/* Current Work Cards - Integrated */}
+                <div className="border-t border-gray-200 pt-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">What this looks like day-to-day</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-blue-50 rounded-lg p-4">
+                      <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mb-3">
+                        <Briefcase className="w-4 h-4 text-white" />
+                      </div>
+                      <h5 className="font-semibold text-gray-900 mb-2 text-sm">Operations Impact</h5>
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        Building Power BI dashboards that 30+ stakeholders actually use, turning ServiceNow chaos into clear insights.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mb-3">
+                        <GraduationCap className="w-4 h-4 text-white" />
+                      </div>
+                      <h5 className="font-semibold text-gray-900 mb-2 text-sm">Teaching & Mentoring</h5>
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        Helping graduate students master SQL. That moment when complex joins finally "click" for someone.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-purple-50 rounded-lg p-4">
+                      <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center mb-3">
+                        <Target className="w-4 h-4 text-white" />
+                      </div>
+                      <h5 className="font-semibold text-gray-900 mb-2 text-sm">Always Learning</h5>
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        Exploring how AI can make data pipelines smarter, wondering what BI will look like next.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </motion.div>
 
-              {/* Quote */}
-              <div className="bg-gray-50 rounded-lg p-6">
-                <blockquote className="text-gray-700 italic text-center">
-                  "The best insights come from understanding both the data and the business challenge it's meant to solve."
+            {/* Tools & Closing Thought Combined */}
+            <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Tools */}
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Tools that make the magic happen</h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Python</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">SQL</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Power BI</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Spark</span>
+                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Databricks</span>
+                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Tableau</span>
+                  <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-medium">Azure</span>
+                  <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-medium">Snowflake</span>
+                </div>
+              </div>
+
+              {/* Philosophy */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">My philosophy</h3>
+                <blockquote className="text-gray-700 text-sm italic leading-relaxed mb-3">
+                  "The best data scientists aren't just good at math and coding – they're curious about people, 
+                  passionate about problems, and obsessed with making things better."
                 </blockquote>
+                <p className="text-gray-600 text-xs">That's the mindset I bring to every dataset, every dashboard, every decision.</p>
               </div>
             </motion.div>
           </div>
