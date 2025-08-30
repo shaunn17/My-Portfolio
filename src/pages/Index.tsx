@@ -1,6 +1,7 @@
 
 import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
+import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Education from '@/components/Education';
 import MainSkills from '@/components/MainSkills';
@@ -27,6 +28,7 @@ const Index = () => {
         keywords={['data analysis', 'business intelligence', 'operations consulting', 'python', 'sql', 'power bi', 'tableau', 'data science', 'machine learning']}
       />
       <Hero />
+      <About />
       <MainSkills />
       <Education />
       <Projects />
