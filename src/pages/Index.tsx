@@ -2,6 +2,7 @@
 import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import ProfessionalJourney from '@/components/ProfessionalJourney';
 import Projects from '@/components/Projects';
 import Education from '@/components/Education';
 import MainSkills from '@/components/MainSkills';
@@ -29,6 +30,7 @@ const Index = () => {
       />
       <Hero />
       <About />
+      <ProfessionalJourney />
       <MainSkills />
       <Education />
       <Projects />
