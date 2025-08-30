@@ -110,8 +110,8 @@ const About = () => {
                 <div className="border-t border-gray-200 pt-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-4">What this looks like day-to-day</h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mb-3">
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mb-3">
                         <Briefcase className="w-4 h-4 text-white" />
                       </div>
                       <h5 className="font-semibold text-gray-900 mb-2 text-sm">Operations Impact</h5>
@@ -120,8 +120,8 @@ const About = () => {
                       </p>
                     </div>
                     
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mb-3">
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mb-3">
                         <GraduationCap className="w-4 h-4 text-white" />
                       </div>
                       <h5 className="font-semibold text-gray-900 mb-2 text-sm">Teaching & Mentoring</h5>
@@ -130,8 +130,8 @@ const About = () => {
                       </p>
                     </div>
                     
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center mb-3">
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mb-3">
                         <Target className="w-4 h-4 text-white" />
                       </div>
                       <h5 className="font-semibold text-gray-900 mb-2 text-sm">Always Learning</h5>
@@ -150,14 +150,14 @@ const About = () => {
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Tools that make the magic happen</h3>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Python</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">SQL</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">Power BI</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Spark</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium">Databricks</span>
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-medium">Tableau</span>
-                  <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-xs font-medium">Azure</span>
-                  <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-xs font-medium">Snowflake</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Python</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">SQL</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Power BI</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Spark</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Databricks</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Tableau</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Azure</span>
+                  <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">Snowflake</span>
                 </div>
               </div>
 

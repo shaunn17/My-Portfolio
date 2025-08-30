@@ -83,35 +83,35 @@ const Navbar = () => {
                     Projects
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid gap-3 p-4 w-[400px]">
+                    <ul className="grid gap-3 p-4 w-[450px]">
                       <li>
                         <Link to="/projects/firecat" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">ServiceNow Analytics</div>
-                          <p className="text-sm text-gray-500">Data analysis and process optimization</p>
+                          <div className="font-medium">ServiceNow Analytics Platform</div>
+                          <p className="text-sm text-gray-500">EDA and root-cause analysis on 2,500+ daily tickets with Python & SQL</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/sport-retail" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Healthcare Readmissions</div>
-                          <p className="text-sm text-gray-500">Machine learning for predictive analytics</p>
+                          <div className="font-medium">Healthcare Readmissions Prediction</div>
+                          <p className="text-sm text-gray-500">XGBoost model achieving 0.91 AUC, reducing readmissions by 15%</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/workwear" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Fraud Detection</div>
-                          <p className="text-sm text-gray-500">ML models for transaction monitoring</p>
+                          <div className="font-medium">Fraud Detection System</div>
+                          <p className="text-sm text-gray-500">ML models with 20% improved accuracy and 12% fewer false positives</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/hockey" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
                           <div className="font-medium">ETL Pipeline Optimization</div>
-                          <p className="text-sm text-gray-500">Automated data processing workflows</p>
+                          <p className="text-sm text-gray-500">Airflow-PySpark pipeline reducing data ingestion time by 40%</p>
                         </Link>
                       </li>
                       <li>
                         <Link to="/projects/pet-tracker" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Real-time Dashboard</div>
-                          <p className="text-sm text-gray-500">Power BI for customer insights</p>
+                          <div className="font-medium">Real-time Dashboard Platform</div>
+                          <p className="text-sm text-gray-500">Power BI tracking 192K+ events, informing 40% expansion in engagement</p>
                         </Link>
                       </li>
                     </ul>

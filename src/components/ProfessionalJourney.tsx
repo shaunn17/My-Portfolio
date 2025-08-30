@@ -12,7 +12,6 @@ interface JourneyItem {
   technologies: string[];
   impact: string;
   icon: JSX.Element;
-  color: string;
 }
 
 const ProfessionalJourney = () => {
@@ -51,8 +50,7 @@ const ProfessionalJourney = () => {
       ],
       technologies: ["Python", "SQL", "Power BI", "ServiceNow"],
       impact: "25% faster issue resolution",
-      icon: <Building2 className="w-5 h-5" />,
-      color: "blue"
+      icon: <Building2 className="w-5 h-5" />
     },
     {
       company: "Indiana University",
@@ -68,8 +66,7 @@ const ProfessionalJourney = () => {
       ],
       technologies: ["SQL", "Database Design", "RDBMS"],
       impact: "30% grade improvement",
-      icon: <Code className="w-5 h-5" />,
-      color: "green"
+      icon: <Code className="w-5 h-5" />
     },
     {
       company: "Indiana University",
@@ -85,8 +82,7 @@ const ProfessionalJourney = () => {
       ],
       technologies: ["Hadoop", "Spark", "Azure Databricks", "AWS S3"],
       impact: "40% faster model training",
-      icon: <Database className="w-5 h-5" />,
-      color: "purple"
+      icon: <Database className="w-5 h-5" />
     },
     {
       company: "Cyberinfrastructure for Network Science Center",
@@ -102,8 +98,7 @@ const ProfessionalJourney = () => {
       ],
       technologies: ["Power BI", "GCP BigQuery", "SQL", "REST APIs"],
       impact: "60% query optimization",
-      icon: <BarChart3 className="w-5 h-5" />,
-      color: "orange"
+      icon: <BarChart3 className="w-5 h-5" />
     },
     {
       company: "Orange Health Labs",
@@ -119,8 +114,7 @@ const ProfessionalJourney = () => {
       ],
       technologies: ["Python", "SQL", "Snowflake", "Tableau"],
       impact: "40% faster data ingestion",
-      icon: <TrendingUp className="w-5 h-5" />,
-      color: "teal"
+      icon: <TrendingUp className="w-5 h-5" />
     },
     {
       company: "Kubixsquare",
@@ -136,22 +130,11 @@ const ProfessionalJourney = () => {
       ],
       technologies: ["React", "TypeScript", "Node.js", "GraphQL"],
       impact: "30% better engagement",
-      icon: <Code className="w-5 h-5" />,
-      color: "indigo"
+      icon: <Code className="w-5 h-5" />
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: "bg-blue-600 border-blue-200 text-blue-800",
-      green: "bg-green-600 border-green-200 text-green-800", 
-      purple: "bg-purple-600 border-purple-200 text-purple-800",
-      orange: "bg-orange-600 border-orange-200 text-orange-800",
-      teal: "bg-teal-600 border-teal-200 text-teal-800",
-      indigo: "bg-indigo-600 border-indigo-200 text-indigo-800"
-    };
-    return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-  };
+
 
   return (
     <section id="professional-journey" className="bg-white py-16 md:py-24">
@@ -189,7 +172,7 @@ const ProfessionalJourney = () => {
                   className="relative flex items-start"
                 >
                   {/* Timeline dot */}
-                  <div className={`absolute left-6 w-4 h-4 rounded-full ${getColorClasses(item.color).split(' ')[0]} border-4 border-white shadow-md z-10`}></div>
+                  <div className="absolute left-6 w-4 h-4 rounded-full bg-gray-900 border-4 border-white shadow-md z-10"></div>
                   
                   {/* Content card */}
                   <div className="ml-16 bg-white rounded-xl shadow-lg border border-gray-200 p-6 w-full hover:shadow-xl transition-shadow">
@@ -197,7 +180,7 @@ const ProfessionalJourney = () => {
                       {/* Left content */}
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <div className={`w-10 h-10 rounded-lg ${getColorClasses(item.color).split(' ')[0]} flex items-center justify-center text-white`}>
+                          <div className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-white">
                             {item.icon}
                           </div>
                           <div>
@@ -228,7 +211,7 @@ const ProfessionalJourney = () => {
                           {item.technologies.map((tech, idx) => (
                             <span 
                               key={idx} 
-                              className={`px-3 py-1 rounded-full text-xs font-medium bg-${item.color}-50 ${getColorClasses(item.color).split(' ')[2]}`}
+                              className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700"
                             >
                               {tech}
                             </span>
@@ -238,11 +221,11 @@ const ProfessionalJourney = () => {
 
                       {/* Impact highlight */}
                       <div className="md:w-48 flex-shrink-0">
-                        <div className={`bg-${item.color}-50 rounded-lg p-4 text-center border ${getColorClasses(item.color).split(' ')[1]}`}>
+                        <div className="bg-gray-50 rounded-lg p-4 text-center border border-gray-200">
                           <div className="flex items-center justify-center mb-2">
-                            <TrendingUp className={`w-5 h-5 ${getColorClasses(item.color).split(' ')[2]}`} />
+                            <TrendingUp className="w-5 h-5 text-gray-700" />
                           </div>
-                          <p className={`font-bold text-lg ${getColorClasses(item.color).split(' ')[2]}`}>
+                          <p className="font-bold text-lg text-gray-900">
                             {item.impact}
                           </p>
                           <p className="text-gray-600 text-xs">Key Impact</p>
