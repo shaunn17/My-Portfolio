@@ -20,6 +20,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Blog from "./pages/Blog";
 import BlogPostDetail from "./pages/BlogPostDetail";
 import SkillsDetail from "./pages/SkillsDetail";
+import AboutWebsite from "./pages/AboutWebsite";
+import BehindScenes from "./pages/BehindScenes";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
@@ -45,6 +47,8 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPostDetail />} />
             <Route path="/skills" element={<SkillsDetail />} />
+            <Route path="/about-website" element={<AboutWebsite />} />
+            <Route path="/behind-scenes" element={<BehindScenes />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

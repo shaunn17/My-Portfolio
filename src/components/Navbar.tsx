@@ -79,43 +79,15 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={cn(isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
+                  <button onClick={() => scrollToSection('projects')} className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
                     Projects
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-3 p-4 w-[450px]">
-                      <li>
-                        <Link to="/projects/firecat" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">ServiceNow Analytics Platform</div>
-                          <p className="text-sm text-gray-500">EDA and root-cause analysis on 2,500+ daily tickets with Python & SQL</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/projects/sport-retail" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Healthcare Readmissions Prediction</div>
-                          <p className="text-sm text-gray-500">XGBoost model achieving 0.91 AUC, reducing readmissions by 15%</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/projects/workwear" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Fraud Detection System</div>
-                          <p className="text-sm text-gray-500">ML models with 20% improved accuracy and 12% fewer false positives</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/projects/hockey" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">ETL Pipeline Optimization</div>
-                          <p className="text-sm text-gray-500">Airflow-PySpark pipeline reducing data ingestion time by 40%</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/projects/pet-tracker" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Real-time Dashboard Platform</div>
-                          <p className="text-sm text-gray-500">Power BI tracking 192K+ events, informing 40% expansion in engagement</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                  </button>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <button onClick={() => scrollToSection('main-skills')} className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
+                    Skills
+                  </button>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
@@ -125,42 +97,19 @@ const Navbar = () => {
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 w-[400px]">
                       <li>
-                        <Link to="/tech-details" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Technical Expertise</div>
-                          <p className="text-sm text-gray-500">My data science and analytics capabilities</p>
+                        <Link to="/about-website" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">About This Website</div>
+                          <p className="text-sm text-gray-500">Technical details, tech stack, AWS deployment, and CI/CD pipeline</p>
                         </Link>
                       </li>
                       <li>
-                        <Link to="/development-process" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
-                          <div className="font-medium">Consulting Process</div>
-                          <p className="text-sm text-gray-500">My approach to data-driven transformation</p>
+                        <Link to="/behind-scenes" className="block p-3 space-y-1 rounded-md hover:bg-gray-100">
+                          <div className="font-medium">Behind the Scenes</div>
+                          <p className="text-sm text-gray-500">Challenges, decisions, and lessons learned while building this portfolio</p>
                         </Link>
-                      </li>
-                      <li>
-                        
                       </li>
                     </ul>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <button onClick={() => scrollToSection('main-skills')} className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
-                    Skills
-                  </button>
-                </NavigationMenuItem>
-                
-                {/* <NavigationMenuItem>
-                  <Link to="/careers">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-gray-800")}>
-                      Careers
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem> */}
-                
-                <NavigationMenuItem>
-                  <button onClick={() => scrollToSection('contact')} className={cn("px-4 py-2 rounded-md transition-colors", isScrolled ? "bg-gray-200 text-gray-700 hover:bg-gray-300" : "bg-gray-700 text-white hover:bg-gray-600")}>
-                    Contact
-                  </button>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -189,36 +138,27 @@ const Navbar = () => {
             About me
           </button>
           
-          {/* Simplified Professional Projects - no dropdown */}
-          <Link to="/projects/firecat" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
-            setIsMenuOpen(false);
-            window.scrollTo(0, 0);
-          }}>
+          <button onClick={() => scrollToSection('projects')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}>
             Projects
-          </Link>
-          
-          {/* Simplified Learn More - no dropdown */}
-          <Link to="/tech-details" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
-            setIsMenuOpen(false);
-            window.scrollTo(0, 0);
-          }}>
-            Learn More
-          </Link>
+          </button>
           
           <button onClick={() => scrollToSection('main-skills')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")}>
             Skills
           </button>
           
-          {/* <Link to="/careers" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
+          <Link to="/about-website" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
             setIsMenuOpen(false);
             window.scrollTo(0, 0);
           }}>
-            Careers
-          </Link> */}
+            About This Website
+          </Link>
           
-          <button onClick={() => scrollToSection('contact')} className={cn("block w-full text-left px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 bg-gray-200 hover:bg-gray-300" : "text-white bg-gray-700 hover:bg-gray-600")}>
-            Contact
-          </button>
+          <Link to="/behind-scenes" className={cn("block px-3 py-1.5 rounded-md text-sm", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-gray-900")} onClick={() => {
+            setIsMenuOpen(false);
+            window.scrollTo(0, 0);
+          }}>
+            Behind the Scenes
+          </Link>
         </div>
       </div>
     </motion.nav>
