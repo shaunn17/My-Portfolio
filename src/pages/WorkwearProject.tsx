@@ -237,7 +237,7 @@ const WorkwearProject = () => {
                   <li>• PCI DSS compliance</li>
                   <li>• GDPR data protection</li>
                   <li>• Banking sector guidelines</li>
-                </ul>
+      </ul>
               </div>
             </div>
           </div>

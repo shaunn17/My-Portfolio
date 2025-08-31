@@ -180,7 +180,7 @@ const HockeyProject = () => {
               <li>• Data validation and quality checks</li>
               <li>• Business rule application</li>
               <li>• Data enrichment and categorization</li>
-            </ul>
+      </ul>
           </div>
         </div>
       </div>
@@ -239,7 +239,7 @@ const HockeyProject = () => {
                   <li>• Business rule compliance monitoring</li>
                 </ul>
               </div>
-              <div>
+          <div>
                 <h5 className="font-medium text-blue-800 mb-2">Performance Monitoring:</h5>
                 <ul className="text-blue-700 text-sm space-y-1">
                   <li>• Pipeline execution time tracking</li>

@@ -252,7 +252,7 @@ const SportRetailProject = () => {
                   <li>• Planned surgical procedures</li>
                   <li>• Shorter length of stay</li>
                   <li>• Weekend discharge patterns</li>
-                </ul>
+      </ul>
               </div>
             </div>
           </div>
