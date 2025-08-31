@@ -1,7 +1,6 @@
-import { ArrowRight, Code, Cpu, Layers, MessageSquare } from "lucide-react";
+import { Code, Cpu, Layers } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -49,6 +48,7 @@ const Hero = () => {
       };
     }
   }, []);
+
   const itemVariants = {
     hidden: {
       y: 20,
@@ -60,16 +60,6 @@ const Hero = () => {
       transition: {
         duration: 0.6
       }
-    }
-  };
-  
-  const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth'
-      });
     }
   };
   
@@ -114,33 +104,6 @@ const Hero = () => {
               <motion.p className="banner-subtitle text-gray-300 mt-4 sm:mt-6" variants={itemVariants}>
                 A curated selection of projects, case studies, and experiments. From data ingestion to insight — ETL, data modeling, and BI that move KPIs.
               </motion.p>
-              <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center items-center" variants={itemVariants}>
-                {/* Styled as a button but using an anchor tag for project navigation */}
-                <button 
-                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                  onClick={e => {
-                    e.preventDefault();
-                    const projectsSection = document.getElementById('projects');
-                    if (projectsSection) {
-                      projectsSection.scrollIntoView({
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
-                >
-                  View Projects
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                
-                {/* Using the Button component from shadcn but with custom styling to match the explore button */}
-                <button 
-                  className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-3 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:shadow-gray-300/20 flex items-center justify-center group text-sm sm:text-base font-medium"
-                  onClick={scrollToContact}
-                >
-                  Contact Me
-                  <MessageSquare className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                </button>
-              </motion.div>
             </motion.div>
           </div>
         </div>

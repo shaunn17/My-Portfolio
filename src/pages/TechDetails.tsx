@@ -2,7 +2,6 @@
 import { ArrowLeft, ArrowRight, FileText, Code, Cpu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
-import ProductPlatform from '@/components/ProductPlatform';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from 'react';
@@ -83,10 +82,16 @@ const TechDetails = () => {
                   
                 </div>
                 
-                {/* Product Platform Architecture Diagram */}
+                {/* Architecture Description */}
                 <Card className="bg-white rounded-lg mb-10 border border-gray-200 shadow-sm">
                   <CardContent className="p-4 lg:p-6">
-                    <ProductPlatform />
+                    <div className="text-center py-8">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-4">System Architecture Overview</h3>
+                      <p className="text-gray-600">
+                        Our three-tier architecture consists of sensor devices, cloud processing, and user applications, 
+                        enabling scalable and efficient data collection and analysis.
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
